@@ -87,7 +87,7 @@ OUTPUT_EXT = '.mp4'     # Output file extension
 
 ## Screenshot
 
-> *(Add a screenshot or demo video here)*
+[시현 영상 링크] (https://youtu.be/MNX2GbEq0NA)
 
 ---
 
