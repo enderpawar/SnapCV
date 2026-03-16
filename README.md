@@ -1,45 +1,45 @@
-# 🎥 Video Recorder
+# 🎥 비디오 레코더
 
-A simple yet feature-rich webcam video recorder built with OpenCV (Python).
+OpenCV(Python)로 만든 간단하지만 기능이 풍부한 웹캠 비디오 녹화 프로그램입니다.
 
 ---
 
-## Features
+## 주요 기능
 
-### Core Features
-| Feature | Description |
+### 코어 기능
+| 기능 | 설명 |
 |---|---|
-| **Live Preview** | Displays real-time webcam footage in a window |
-| **Video Recording** | Saves camera footage to an `.mp4` file using `cv.VideoWriter` |
-| **Preview / Record Modes** | Toggle between modes with the `Space` key |
-| **REC Indicator** | A red circle + "REC" text appears on screen while recording |
-| **Quit** | Press `ESC` to exit the program |
+| **실시간 미리보기** | 웹캠 영상을 실시간으로 창에 표시 |
+| **비디오 녹화** | `cv.VideoWriter`를 사용해 `.mp4` 파일로 저장 |
+| **미리보기 / 녹화 모드** | `Space` 키로 모드 전환 |
+| **REC 표시** | 녹화 중 화면에 빨간 동그라미와 "REC" 텍스트 표시 |
+| **종료** | `ESC` 키로 프로그램 종료 |
 
-### Additional Features
-| Feature | Description |
+### 추가 기능
+| 기능 | 설명 |
 |---|---|
-| **Codec (FourCC)** | Uses `mp4v` codec; easily configurable in `FOURCC` constant |
-| **FPS Control** | Target recording FPS set via `TARGET_FPS` constant (default: 30) |
-| **Real-time FPS Display** | Current capture FPS shown on screen |
-| **8 Filter Modes** | Cycle through filters with the `F` key (see table below) |
-| **Timestamp Overlay** | Current date/time displayed on every frame |
-| **Keyboard Hint** | On-screen shortcut guide always visible |
+| **코덱(FourCC)** | `FOURCC` 상수에서 쉽게 변경 가능한 기본 `mp4v` 코덱 사용 |
+| **FPS 제어** | `TARGET_FPS` 상수로 목표 녹화 FPS 설정 (기본값: 30) |
+| **실시간 FPS 표시** | 현재 캡처 FPS를 화면에 표시 |
+| **8가지 필터 모드** | `F` 키로 필터 전환 (아래 표 참고) |
+| **타임스탬프 오버레이** | 각 프레임에 현재 날짜/시간 표시 |
+| **키보드 힌트** | 화면에 항상 단축키 안내 표시 |
 
-### Filter Modes (`F` key to cycle)
-| # | Name | Effect |
+### 필터 모드 (`F` 키로 전환)
+| # | 이름 | 효과 |
 |---|---|---|
-| 0 | Original | No filter |
-| 1 | Grayscale | Black & white |
-| 2 | Flip-H | Horizontal mirror |
-| 3 | Flip-V | Vertical flip |
-| 4 | Brightness+ | Brightness +50 |
-| 5 | Brightness- | Brightness -50 |
-| 6 | Contrast+ | Contrast ×1.5 |
-| 7 | Contrast- | Contrast ×0.5 |
+| 0 | Original | 원본 (필터 없음) |
+| 1 | Grayscale | 흑백 필터 |
+| 2 | Flip-H | 좌우 반전 |
+| 3 | Flip-V | 상하 반전 |
+| 4 | Brightness+ | 밝기 +50 |
+| 5 | Brightness- | 밝기 -50 |
+| 6 | Contrast+ | 대비 ×1.5 |
+| 7 | Contrast- | 대비 ×0.5 |
 
 ---
 
-## Requirements
+## 요구 사항
 
 ```
 Python 3.9+
@@ -47,14 +47,15 @@ opencv-python
 numpy
 ```
 
-Install dependencies:
+의존성 설치:
+
 ```bash
 pip install opencv-python numpy
 ```
 
 ---
 
-## How to Run
+## 실행 방법
 
 ```bash
 python video_recorder.py
@@ -62,38 +63,39 @@ python video_recorder.py
 
 ---
 
-## Keyboard Shortcuts
+## 키보드 단축키
 
-| Key | Action |
+| 키 | 동작 |
 |---|---|
-| `Space` | Start / Stop recording |
-| `F` | Cycle to next filter |
-| `ESC` | Quit program |
+| `Space` | 녹화 시작 / 종료 |
+| `F` | 다음 필터로 전환 |
+| `ESC` | 프로그램 종료 |
 
 ---
 
-## Configuration
+## 설정
 
-Edit the constants at the top of `video_recorder.py`:
+`video_recorder.py` 상단의 상수를 수정해 설정할 수 있습니다.
 
 ```python
-CAMERA_ID  = 0          # Camera index (0 = default webcam)
-TARGET_FPS = 30.0       # Recording frame rate
-FOURCC     = cv.VideoWriter_fourcc(*'mp4v')  # Video codec
-OUTPUT_EXT = '.mp4'     # Output file extension
+CAMERA_ID  = 0          # 카메라 인덱스 (0 = 기본 웹캠)
+TARGET_FPS = 30.0       # 녹화 프레임 레이트
+FOURCC     = cv.VideoWriter_fourcc(*'mp4v')  # 비디오 코덱
+OUTPUT_EXT = '.mp4'     # 출력 파일 확장자
 ```
 
 ---
 
-## Screenshot
+## 시현 영상
 
-[시현 영상 링크] (https://youtu.be/MNX2GbEq0NA)
+[시현 영상 링크](https://youtu.be/MNX2GbEq0NA)
 
 ---
 
-## Output
+## 출력 파일 형식
 
-Recorded files are saved in the current directory as:
+녹화된 파일은 현재 디렉터리에 다음 형식으로 저장됩니다.
+
 ```
 record_YYYYMMDD_HHMMSS.mp4
 ```
